@@ -15,8 +15,16 @@ export default function Articles(props: articleProps) {
     const { user, repo } = props;
     return setArticles(await getPosts({ user, repo }));
   };
-  const _prev = () => { setPage(page - 1) }
-  const _next = () => { setPage(page + 1) }
+  const _prev = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+   }
+  const _next = () => { 
+    if (page < articles.length - 1) {
+      setPage(page + 1);
+    }
+   }
   useEffect(() => { _getArticles() }, []);
 
   return (
@@ -25,10 +33,7 @@ export default function Articles(props: articleProps) {
         <button onClick={() => { _prev() }}>Previous</button>
         <button onClick={() => { _next() }}>Next</button>
       </span>
-      <div
-
-        dangerouslySetInnerHTML={{ __html: articles[page].html }}
-      />
+      <div dangerouslySetInnerHTML={{ __html: articles[page].html }}/>
     </div>
   );
 }
