@@ -30,7 +30,7 @@ export default function Articles(props: articleProps) {
           Previous
         </button>
         <button class="button" onClick={() => { _next() }}>Next</button>
-        <p style={{ marginLeft: '10px' }}>{page + 1}{'/'}{articles.length}</p>
+        <p style={{ marginLeft: '10px',minWidth:'40px' }}>{page + 1}{'/'}{articles.length}</p>
       </span>
       <div dangerouslySetInnerHTML={{ __html: articles[page].html }} />
     </div>

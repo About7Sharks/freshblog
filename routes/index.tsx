@@ -6,6 +6,9 @@ import Blog from "../islands/Blog.tsx";
 
 export const Head = () => (
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A portfolio website using fresh and deno" />
     <title>Fresh Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
     <link rel="stylesheet" href="/index.css" />
