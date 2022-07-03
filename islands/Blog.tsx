@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
-import { getPosts } from '../util.ts'
+import { getPosts } from '../utils/index.ts';
 
 interface articleProps {
   user: string;
@@ -15,25 +15,24 @@ export default function Articles(props: articleProps) {
     const { user, repo } = props;
     return setArticles(await getPosts({ user, repo }));
   };
-  const _prev = () => {
-    if (page > 0) {
-      setPage(page - 1);
-    }
-   }
-  const _next = () => { 
-    if (page < articles.length - 1) {
-      setPage(page + 1);
-    }
-   }
+  const _prev = () => { if (page > 0) { setPage(page - 1) } }
+  const _next = () => { if (page < articles.length - 1) { setPage(page + 1) } }
+
   useEffect(() => { _getArticles() }, []);
 
   return (
-    <div >
-      <span>
-        <button onClick={() => { _prev() }}>Previous</button>
-        <button onClick={() => { _next() }}>Next</button>
+    <div style={{ maxWidth: '800px', marginBottom: '25px' }} >
+      <span class="columns mt-3 is-centered is-vcentered">
+        <button
+          style={{ marginLeft: '10px' }}
+          class="button"
+          onClick={() => { _prev() }}>
+          Previous
+        </button>
+        <button class="button" onClick={() => { _next() }}>Next</button>
+        <p style={{ marginLeft: '10px' }}>{page + 1}{'/'}{articles.length}</p>
       </span>
-      <div dangerouslySetInnerHTML={{ __html: articles[page].html }}/>
+      <div dangerouslySetInnerHTML={{ __html: articles[page].html }} />
     </div>
   );
 }

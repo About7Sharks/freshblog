@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import {getPost} from "../../util.ts";
+import {getPost} from "../../utils/index.ts";
 
 interface User {
   user: string;
