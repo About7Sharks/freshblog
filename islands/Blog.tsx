@@ -21,7 +21,7 @@ export default function Articles(props: articleProps) {
   useEffect(() => { _getArticles() }, []);
 
   return (
-    <div style={{ maxWidth: '800px', marginBottom: '25px' }} >
+    <div class='blog' >
       <span class="columns mt-3 is-centered is-vcentered">
         <button
           style={{ marginLeft: '10px' }}
@@ -30,7 +30,7 @@ export default function Articles(props: articleProps) {
           Previous
         </button>
         <button class="button" onClick={() => { _next() }}>Next</button>
-        <p style={{ marginLeft: '10px',minWidth:'40px' }}>{page + 1}{'/'}{articles.length}</p>
+        <p style={{ marginLeft: '10px',minWidth:'40px' }}>{articles.length>1?`${page + 1}/${articles.length}`:'fetching'}</p>
       </span>
       <div dangerouslySetInnerHTML={{ __html: articles[page].html }} />
     </div>
