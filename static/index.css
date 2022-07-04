@@ -1,16 +1,14 @@
 html {
-  background-image: linear-gradient(
-    205deg,
-    hsl(187deg 100% 84%) 0%,
-    hsl(197deg 100% 90%) 0%,
-    hsl(248deg 100% 96%) 2%,
-    hsl(320deg 100% 96%) 7%,
-    hsl(0deg 100% 97%) 50%,
-    hsl(354deg 100% 91%) 93%,
-    hsl(348deg 100% 84%) 98%,
-    hsl(342deg 100% 77%) 100%,
-    hsl(336deg 100% 69%) 100%
-  );
+  background-image: linear-gradient(205deg,
+      hsl(187deg 100% 84%) 0%,
+      hsl(197deg 100% 90%) 0%,
+      hsl(248deg 100% 96%) 2%,
+      hsl(320deg 100% 96%) 7%,
+      hsl(0deg 100% 97%) 50%,
+      hsl(354deg 100% 91%) 93%,
+      hsl(348deg 100% 84%) 98%,
+      hsl(342deg 100% 77%) 100%,
+      hsl(336deg 100% 69%) 100%);
   min-height: 100vh;
   font-size: 1.1;
 }
@@ -25,6 +23,7 @@ pre,
 img {
   max-width: 100%;
 }
+
 pre {
   background: #040404;
   color: white;
@@ -32,10 +31,21 @@ pre {
   margin: 5px 0px;
 }
 
-.blog {
+
+.blogContainer {
+  display: grid;
+  justify-items: center;
   max-width: 800px;
-  margin-bottom: 25px;
+  width: 100%;
+  margin-top: 25px
 }
+
+.blog {
+  width: 100vw;
+  max-width: 800px;
+  padding: 25px;
+}
+
 p {
-    margin: 12px 1px;
+  margin: 12px 1px;
 }

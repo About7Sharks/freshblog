@@ -30,9 +30,9 @@ export default function Articles(props: articleProps) {
           Previous
         </button>
         <button class="button" onClick={() => { _next() }}>Next</button>
-        <p style={{ marginLeft: '10px',minWidth:'40px' }}>{articles.length>1?`${page + 1}/${articles.length}`:'fetching'}</p>
+        <p style={{ marginLeft: '10px', minWidth: '40px' }}>{articles.length > 1 ? `${page + 1}/${articles.length}` : 'fetching'}</p>
       </span>
-      <div dangerouslySetInnerHTML={{ __html: articles[page].html }} />
+      <div dangerouslySetInnerHTML={{ __html: articles[page]?.html }} />
     </div>
   );
 }
